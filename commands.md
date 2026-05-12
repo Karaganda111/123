@@ -14,7 +14,7 @@
       iface eth2 inet static
        address 172.16.2.1/28
   # systemctl restart networking
-  # nano /etc/sysctl.conf
+  # nano /etc/sysctl.conf 
     и добавляем в конец файла следующую строку
       net.ipv4.ip_forward=1
   # sysctl -p
@@ -22,7 +22,7 @@
   # iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
     Реализуем автозагрузку созданных правил
   # iptables-save > /etc/rules.v4
-    после ввода данной команды открываем crontab следующей командо
+    после ввода данной команды открываем crontab следующей командой
   # crontab -e
     Будет предложен выбор текстового редактора пишем 1 и нажимаем Enter 
     добавляем в конец файла следующую строки:
